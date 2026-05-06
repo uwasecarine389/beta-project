@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Registration Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background: #28a745;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Product Registration</h2>
+    <form>
+      <label>Product Name</label>
+      <input type="text" required>
+
+      <label>Product ID</label>
+      <input type="text" required>
+
+      <label>Category</label>
+      <select>
+        <option>Electronics</option>
+        <option>Clothing</option>
+        <option>Food</option>
+      </select>
+
+      <label>Price</label>
+      <input type="number" required>
+
+      <label>Quantity</label>
+      <input type="number" required>
+
+      <button type="submit">Register Product</button>
+    </form>
+  </div>
+
+</body>
+</html>
