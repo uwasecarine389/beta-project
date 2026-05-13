@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Product Registration Form</title>
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
-    .form-container {
-      background: #fff;
-      padding: 20px;
-      max-width: 400px;
-      margin: auto;
-      border-radius: 8px;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-    button {
-      padding: 10px;
-      width: 100%;
-      background: #28a745;
-      color: white;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration Form</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="form-container">
-    <h2>Product Registration</h2>
-    <form>
-      <label>Product Name</label>
-      <input type="text" required>
+    <div class="form-container">
+        <h2>Product Registration</h2>
 
-      <label>Product ID</label>
-      <input type="text" required>
+        <form>
 
-      <label>Category</label>
-      <select>
-        <option>Electronics</option>
-        <option>Clothing</option>
-        <option>Food</option>
-      </select>
+            <label for="purchaser">Purchaser Name</label>
+            <input 
+                type="text" 
+                id="purchaser"
+                placeholder="Enter purchaser name" 
+                required
+            >
 
-      <label>Price</label>
-      <input type="number" required>
+            <label for="product-name">Product Name</label>
+            <input 
+                type="text" 
+                id="product-name"
+                placeholder="Enter product name" 
+                required
+            >
 
-      <label>Quantity</label>
-      <input type="number" required>
+            <label for="product-id">Product ID</label>
+            <input 
+                type="text" 
+                id="product-id"
+                placeholder="Enter product ID" 
+                required
+            >
 
-      <button type="submit">Register Product</button>
-    </form>
-  </div>
+            <label for="category">Category</label>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Food</option>
+            </select>
+
+            <label for="price">Price</label>
+            <input 
+                type="number" 
+                id="price"
+                placeholder="Enter product price" 
+                required
+            >
+
+            <label for="quantity">Quantity</label>
+            <input 
+                type="number" 
+                id="quantity"
+                placeholder="Enter quantity" 
+                required
+            >
+
+            <br>
+
+            <!-- Register Button -->
+            <button type="submit">
+                Register Product
+            </button>
+
+            <br><br>
+
+            <!-- Purchase Button -->
+            <button type="button">
+                Purchase Product
+            </button>
+
+            <br><br>
+
+            <!-- View Purchases Button -->
+            <button 
+                type="button"
+                onclick="window.location.href='purchases.html'">
+                View Purchases
+            </button>
+
+        </form>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
