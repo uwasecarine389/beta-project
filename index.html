@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beta Tech Solutions</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #2c3e50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar h2 {
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+    }
+
+    .nav-links a:hover {
+      background-color: #34495e;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1522071820081-009f0129c71c");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #1abc9c;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #16a085;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 30px;
+    }
+
+    .feature-box {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 250px;
+      padding: 20px;
+      margin: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h2>Beta Tech</h2>
+    <ul class="nav-links">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="employee.html">Employees</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="booking.html">Bookings</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>Welcome to Beta Tech Solutions</h1>
+      <p>Manage employees, products, events, and more in one system</p>
+      <a href="login.html" class="btn">Get Started</a>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <h2>Our Features</h2>
+
+    <div class="feature-box">
+      <div class="card">
+        <h3>User Login</h3>
+        <p>Secure access to the system</p>
+      </div>
+
+      <div class="card">
+        <h3>Employee Registration</h3>
+        <p>Manage staff information easily</p>
+      </div>
+
+      <div class="card">
+        <h3>Product Management</h3>
+        <p>Register and track products</p>
+      </div>
+
+      <div class="card">
+        <h3>Event Booking</h3>
+        <p>Book and manage events efficiently</p>
+      </div>
+
+      <div class="card">
+        <h3>Customer Feedback</h3>
+        <p>Collect and review user opinions</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>&copy; 2026 Beta Tech Solutions | All Rights Reserved</p>
+  </div>
+
+</body>
+</html>
