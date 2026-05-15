@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Booking Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>Event Booking</h1>
+    <form>
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+      <select id="event-type" name="eventType" required>
+        <option value="">Select Event Type</option>
+        <option value="wedding">Wedding</option>
+        <option value="conference">Conference</option>
+        <option value="birthday">Birthday Party</option>
+        <option value="concert">Concert</option>
+        <option value="meeting">Meeting</option>
+      </select>
+      <input type="date" id="event-date" name="eventDate" required>
+      <input type="time" id="event-time" name="eventTime" required>
+      <input type="number" id="guests" name="guests" placeholder="Number of Guests" min="1" required>
+      <textarea id="notes" name="notes" placeholder="Special Requests or Notes" rows="4"></textarea>
+      <button type="submit">Book Event</button>
+      <p id="message"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      message.className = '';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const eventType = document.getElementById('event-type').value;
+      const eventDate = document.getElementById('event-date').value;
+      const eventTime = document.getElementById('event-time').value;
+      const guests = Number(document.getElementById('guests').value);
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phonePattern = /^\+?\d{7,15}$/;
+      const today = new Date();
+      const selectedDate = eventDate ? new Date(eventDate + 'T00:00:00') : null;
+
+      if (!name) {
+        return showError('Please enter your full name.');
+      }
+
+      if (!email || !emailPattern.test(email)) {
+        return showError('Please enter a valid email address.');
+      }
+
+      if (!phone || !phonePattern.test(phone)) {
+        return showError('Please enter a valid phone number with 7 to 15 digits.');
+      }
+
+      if (!eventType) {
+        return showError('Please select an event type.');
+      }
+
+      if (!eventDate) {
+        return showError('Please choose an event date.');
+      }
+
+      if (selectedDate < new Date(today.toDateString())) {
+        return showError('Event date cannot be in the past.');
+      }
+
+      if (!eventTime) {
+        return showError('Please choose an event time.');
+      }
+
+      if (!guests || guests < 1) {
+        return showError('Please enter a valid number of guests.');
+      }
+
+      showSuccess('Your event booking request has been submitted successfully.');
+      form.reset();
+    });
+
+    function showError(text) {
+      message.textContent = text;
+      message.className = 'error';
+    }
+
+    function showSuccess(text) {
+      message.textContent = text;
+      message.className = 'success';
+    }
+  </script>
+</body>
+</html>
